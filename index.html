@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edge News – Official Global Updates</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Poppins',sans-serif;background:#f0f8ff;color:#1a2a4a;}
+a{text-decoration:none;}
+
+nav{background:#fff;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 12px rgba(0,100,200,0.08);position:sticky;top:0;z-index:99;}
+.logo{font-size:22px;font-weight:900;color:#1a6fd4;letter-spacing:1px;}
+.logo span{color:#f5a623;}
+.nav-dl{background:#1a6fd4;color:#fff;padding:9px 22px;border-radius:8px;font-weight:700;font-size:14px;}
+
+.hero{background:linear-gradient(135deg,#1a6fd4 0%,#0d4fa8 100%);color:#fff;text-align:center;padding:60px 20px 50px;}
+.hero-badge{display:inline-block;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:30px;padding:6px 18px;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;}
+.hero h1{font-size:clamp(32px,7vw,58px);font-weight:900;line-height:1.1;margin-bottom:12px;}
+.hero h1 span{color:#ffd700;}
+.hero p{font-size:16px;opacity:0.88;max-width:480px;margin:0 auto 32px;line-height:1.6;}
+.btn-dl{display:inline-flex;align-items:center;gap:10px;background:#ffd700;color:#1a2a4a;padding:16px 40px;border-radius:10px;font-weight:800;font-size:17px;box-shadow:0 6px 24px rgba(0,0,0,0.2);}
+.dl-note{margin-top:14px;font-size:12px;opacity:0.75;}
+
+.bonus-banner{background:linear-gradient(90deg,#f5a623,#ffd700,#f5a623);text-align:center;padding:18px 20px;}
+.bonus-banner p{font-size:18px;font-weight:800;color:#1a2a4a;}
+.bonus-banner p span{font-size:26px;}
+.reg-btn{display:inline-block;background:#1a6fd4;color:#fff;padding:10px 28px;border-radius:8px;font-weight:700;font-size:14px;margin-top:10px;}
+
+.reg-cta{background:#fff;border:2px solid #ffd700;border-radius:16px;max-width:580px;margin:0 auto;padding:32px 24px;text-align:center;}
+.reg-cta .amount{font-size:clamp(52px,12vw,80px);font-weight:900;color:#f5a623;line-height:1;}
+.reg-cta .amount-label{font-size:13px;letter-spacing:3px;color:#888;text-transform:uppercase;margin-bottom:8px;}
+.reg-cta h3{font-size:20px;font-weight:700;color:#1a2a4a;margin:12px 0 8px;}
+.reg-cta p{font-size:14px;color:#555;margin-bottom:20px;line-height:1.6;}
+.reg-cta .btn-reg{display:block;background:linear-gradient(90deg,#f5a623,#ffd700);color:#1a2a4a;padding:14px 20px;border-radius:10px;font-weight:800;font-size:16px;margin-bottom:10px;}
+.reg-cta .btn-dl2{display:block;background:#1a6fd4;color:#fff;padding:12px 20px;border-radius:10px;font-weight:700;font-size:14px;}
+.offer-tag{display:inline-block;background:#ff4757;color:#fff;font-size:11px;font-weight:700;letter-spacing:2px;padding:4px 12px;border-radius:20px;margin-bottom:16px;text-transform:uppercase;}
+
+.section{padding:60px 20px;max-width:900px;margin:0 auto;}
+.section-title{font-size:clamp(22px,4vw,32px);font-weight:800;color:#1a2a4a;text-align:center;margin-bottom:8px;}
+.section-title span{color:#1a6fd4;}
+.section-sub{text-align:center;color:#666;font-size:15px;margin-bottom:36px;}
+
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+.blog-card{background:#fff;border-radius:14px;padding:24px;box-shadow:0 2px 16px rgba(26,111,212,0.07);border:1px solid #e8f0fa;}
+.blog-icon{font-size:32px;margin-bottom:12px;}
+.blog-card h4{font-size:16px;font-weight:700;color:#1a2a4a;margin-bottom:8px;}
+.blog-card p{font-size:13px;color:#666;line-height:1.6;}
+.blog-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1px;padding:3px 10px;border-radius:20px;margin-bottom:10px;text-transform:uppercase;}
+.tag-blue{background:#e8f0fa;color:#1a6fd4;}
+.tag-gold{background:#fff8e1;color:#f5a623;}
+
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;}
+.feat{background:#fff;border-radius:12px;padding:20px;text-align:center;border:1px solid #e8f0fa;}
+.feat-icon{font-size:28px;margin-bottom:8px;}
+.feat h5{font-size:14px;font-weight:700;color:#1a2a4a;margin-bottom:4px;}
+.feat p{font-size:12px;color:#888;line-height:1.5;}
+
+.divider{height:1px;background:linear-gradient(90deg,transparent,#1a6fd4,transparent);margin:0 40px;}
+
+/* INSTALL GUIDE */
+.install-section{background:#fff;padding:60px 20px;}
+.install-inner{max-width:860px;margin:0 auto;}
+.install-steps{display:flex;flex-direction:column;gap:0;margin-top:36px;position:relative;}
+.install-steps::before{content:'';position:absolute;left:28px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,#1a6fd4,#ffd700);border-radius:2px;}
+.install-step{display:flex;gap:20px;align-items:flex-start;padding:0 0 32px 0;position:relative;}
+.install-step:last-child{padding-bottom:0;}
+.step-circle{width:56px;height:56px;border-radius:50%;background:#1a6fd4;color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:1;box-shadow:0 4px 12px rgba(26,111,212,0.25);}
+.install-step.gold .step-circle{background:linear-gradient(135deg,#f5a623,#ffd700);color:#1a2a4a;}
+.step-body{background:#f7faff;border:1px solid #e0eaf8;border-radius:12px;padding:18px 20px;flex:1;}
+.step-body h4{font-size:16px;font-weight:700;color:#1a2a4a;margin-bottom:4px;}
+.step-body p{font-size:13px;color:#555;line-height:1.6;}
+.step-body .step-tip{display:inline-block;background:#e8f0fa;color:#1a6fd4;font-size:11px;font-weight:600;padding:3px 10px;border-radius:6px;margin-top:8px;}
+.install-step.gold .step-body{background:#fffbf0;border-color:#ffd700;}
+.install-step.gold .step-body h4{color:#f5a623;}
+
+/* PAYMENT METHODS */
+.payment-section{background:linear-gradient(135deg,#1a2a4a 0%,#0d1e3a 100%);padding:60px 20px;text-align:center;}
+.payment-inner{max-width:820px;margin:0 auto;}
+.payment-section h2{font-size:clamp(22px,4vw,32px);font-weight:800;color:#fff;margin-bottom:8px;}
+.payment-section .sub{color:rgba(255,255,255,0.6);font-size:14px;margin-bottom:36px;}
+.payment-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px;}
+.payment-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:28px 20px;text-align:center;}
+.pay-icon{font-size:40px;margin-bottom:12px;}
+.payment-card h4{font-size:16px;font-weight:700;color:#ffd700;margin-bottom:6px;}
+.payment-card p{font-size:12px;color:rgba(255,255,255,0.55);line-height:1.5;}
+.pay-badge{display:inline-block;background:rgba(255,215,0,0.15);border:1px solid rgba(255,215,0,0.3);color:#ffd700;font-size:10px;font-weight:700;letter-spacing:1px;padding:3px 10px;border-radius:20px;margin-top:8px;text-transform:uppercase;}
+
+.bonus-strip{background:#1a2a4a;padding:32px 20px;text-align:center;}
+.bonus-strip h3{font-size:clamp(18px,4vw,26px);font-weight:800;color:#fff;margin-bottom:8px;}
+.bonus-strip .big{font-size:clamp(48px,10vw,80px);font-weight:900;color:#ffd700;line-height:1;display:block;}
+.bonus-strip p{color:rgba(255,255,255,0.7);font-size:14px;margin:8px 0 20px;}
+.steps{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:8px;}
+.step{background:#fff;border:2px solid #e8f0fa;border-radius:12px;padding:18px 20px;flex:1;min-width:160px;max-width:200px;text-align:center;}
+.step-n{font-size:28px;font-weight:900;color:#1a6fd4;margin-bottom:4px;}
+.step p{font-size:13px;color:#555;}
+
+footer{background:#1a2a4a;color:#fff;text-align:center;padding:40px 20px;}
+footer .f-logo{font-size:22px;font-weight:900;color:#fff;margin-bottom:8px;}
+footer .f-logo span{color:#ffd700;}
+footer p{font-size:13px;opacity:0.6;margin-bottom:20px;line-height:1.6;}
+.footer-links{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:16px;}
+.footer-links a{color:rgba(255,255,255,0.5);font-size:13px;}
+.btn-footer{display:inline-block;background:#ffd700;color:#1a2a4a;padding:12px 32px;border-radius:8px;font-weight:800;font-size:14px;margin:12px 0;}
+.copy{font-size:11px;opacity:0.4;margin-top:16px;}
+
+@media(max-width:600px){
+  nav .logo{font-size:18px;}
+  .hero{padding:44px 16px 40px;}
+  .section{padding:44px 16px;}
+  .install-steps::before{left:22px;}
+  .step-circle{width:44px;height:44px;font-size:16px;}
+  .payment-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">EDGE <span>NEWS</span></div>
+  <a href="https://drive.google.com/uc?export=download&id=1t4ZHUUUpeBygVZ_fxV7ce6KXIiLpSOtN" class="nav-dl">⬇ Download Free</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">🌍 Live · Global · Verified</div>
+  <h1>EDGE NEWS<br><span>Official Global Updates</span></h1>
+  <p>Get real-time verified news from around the world — politics, sports, technology, entertainment & lifestyle. All in one free app.</p>
+  <a href="https://drive.google.com/uc?export=download&id=1t4ZHUUUpeBygVZ_fxV7ce6KXIiLpSOtN" class="btn-dl">⬇ Download APK — Free</a>
+  <div class="dl-note">✓ Android · ✓ 100% Free · ✓ 5,000 Bonus on Signup</div>
+</section>
+
+<!-- BONUS BANNER TOP -->
+<div class="bonus-banner">
+  <p><span>🎁</span> New Users Get <strong>5,000 Bonus Points</strong> Credited to Their Account!</p>
+  <a href="https://drive.google.com/uc?export=download&id=1t4ZHUUUpeBygVZ_fxV7ce6KXIiLpSOtN" class="reg-btn">Register & Claim Now →</a>
+</div>
+
+<!-- WHAT IS EDGE NEWS -->
+<div class="section">
+  <h2 class="section-title">What is <span>Edge News?</span></h2>
+  <p class="section-sub">A trusted global news platform delivering verified, real-time stories straight to your phone.</p>
+  <div class="features-grid">
+    <div class="feat"><div class="feat-icon">🛡️</div><h5>Verified Sources</h5><p>Every story verified from certified outlets worldwide</p></div>
+    <div class="feat"><div class="feat-icon">⚡</div><h5>Real-Time Updates</h5><p>Breaking news the moment it happens, 24/7</p></div>
+    <div class="feat"><div class="feat-icon">🌐</div><h5>150+ Countries</h5><p>Global reporters covering every major region</p></div>
+    <div class="feat"><div class="feat-icon">📱</div><h5>Easy to Use</h5><p>Clean, fast app designed for daily reading</p></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- BONUS MID -->
+<div class="section" style="padding-top:50px;padding-bottom:50px;">
+  <div class="reg-cta">
+    <div class="offer-tag">⏱ Limited Time Offer</div>
+    <div class="amount-label">Welcome Bonus</div>
+    <div class="amount">5,000</div>
+    <div class="amount-label" style="margin-top:4px;">Points — Credited Instantly</div>
+    <h3>Register Today & Claim Your Bonus</h3>
+    <p>Download Edge News, create your free account, and <strong>5,000 bonus points</strong> are credited directly to your account. Withdraw to your bank, UPI, or crypto wallet anytime.</p>
+    <a href="https://drive.google.com/uc?export=download&id=1t4ZHUUUpeBygVZ_fxV7ce6KXIiLpSOtN" class="btn-reg">🎁 Register & Claim 5,000 Bonus</a>
+    <a href="https://drive.google.com/uc?export=download&id=1t4ZHUUUpeBygVZ_fxV7ce6KXIiLpSOtN" class="btn-dl2">⬇ Download APK First</a>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- BLOGS -->
+<div class="section">
+  <h2 class="section-title">Why <span>People Love</span> Edge News</h2>
+  <p class="section-sub">Read what makes Edge News the go-to news app for millions.</p>
+  <div class="blog-grid">
+    <div class="blog-card">
+      <span class="blog-tag tag-blue">Coverage</span>
+      <div class="blog-icon">🌍</div>
+      <h4>Truly Global News Coverage</h4>
+      <p>Edge News pulls from 500+ certified sources across 150 countries, so you never miss a story — whether it's local or international.</p>
+    </div>
+    <div class="blog-card">
+      <span class="blog-tag tag-gold">Bonus</span>
+      <div class="blog-icon">🎁</div>
+      <h4>5,000 Bonus Just for Signing Up</h4>
+      <p>New users receive 5,000 bonus points the moment they register. Download the APK and claim your bonus today — it's completely free.</p>
+    </div>
+    <div class="blog-card">
+      <span class="blog-tag tag-blue">Categories</span>
+      <div class="blog-icon">📂</div>
+      <h4>5 Categories, Endless Stories</h4>
+      <p>Politics, Sports, Technology, Entertainment, and Lifestyle — curated feeds personalized to your interests.</p>
+    </div>
+    <div class="blog-card">
+      <span class="blog-tag tag-blue">Speed</span>
+      <div class="blog-icon">⚡</div>
+      <h4>Breaking News in Real Time</h4>
+      <p>Edge News delivers updates the moment they happen. Be first to know about every major event anywhere on the globe.</p>
+    </div>
+  </div>
+</div>
+
+<!-- BONUS STRIP -->
+<div class="bonus-strip">
+  <h3>Don't Miss Your</h3>
+  <span class="big">5,000</span>
+  <p>Bonus Points — Credited directly to every new account. Limited time offer.</p>
+  <div class="steps">
+    <div class="step"><div class="step-n">1</div><p>Download the APK</p></div>
+    <div class="step"><div class="step-n">2</div><p>Register your account</p></div>
+    <div class="step"><div class="step-n">3</div><p>5,000 Bonus instantly!</p></div>
+  </div>
+  <div style="margin-top:24px;">
+    <a href="https://drive.google.com/uc?export=download&id=1t4ZHUUUpeBygVZ_fxV7ce6KXIiLpSOtN" style="background:#ffd700;color:#1a2a4a;display:inline-block;padding:16px 40px;border-radius:10px;font-weight:800;font-size:16px;">⬇ Download & Register Now</a>
+  </div>
+</div>
+
+<!-- INSTALL GUIDE -->
+<div class="install-section">
+  <div class="install-inner">
+    <h2 class="section-title">How to <span>Install & Get Bonus</span></h2>
+    <p class="section-sub">Follow these simple steps — takes less than 2 minutes.</p>
+
+    <div class="install-steps">
+
+      <div class="install-step">
+        <div class="step-circle">⬇</div>
+        <div class="step-body">
+          <h4>Step 1 — Download the APK</h4>
+          <p>Click the download button below. The Edge News APK file will be saved to your phone's Downloads folder automatically.</p>
+          <a href="https://drive.google.com/uc?export=download&id=1t4ZHUUUpeBygVZ_fxV7ce6KXIiLpSOtN" style="display:inline-block;background:#1a6fd4;color:#fff;padding:9px 22px;border-radius:8px;font-weight:700;font-size:13px;margin-top:10px;">⬇ Download APK Now</a>
+        </div>
+      </div>
+
+      <div class="install-step">
+        <div class="step-circle">⚙️</div>
+        <div class="step-body">
+          <h4>Step 2 — Allow Unknown Sources</h4>
+          <p>Go to your phone <strong>Settings → Security</strong> and enable <strong>"Install from Unknown Sources"</strong> or <strong>"Allow this source"</strong> when prompted. This is required for APK files outside the Play Store.</p>
+          <span class="step-tip">💡 Android 8+ will ask automatically when you open the file</span>
+        </div>
+      </div>
+
+      <div class="install-step">
+        <div class="step-circle">📦</div>
+        <div class="step-body">
+          <h4>Step 3 — Install the App</h4>
+          <p>Open your <strong>Downloads folder</strong>, tap the <strong>Edge News APK</strong> file, then tap <strong>"Install"</strong>. Wait a few seconds for installation to complete.</p>
+          <span class="step-tip">✓ Safe · Fast · Free</span>
+        </div>
+      </div>
+
+      <div class="install-step">
+        <div class="step-circle">📱</div>
+        <div class="step-body">
+          <h4>Step 4 — Open Edge News</h4>
+          <p>Once installed, tap <strong>"Open"</strong> or find the Edge News icon on your home screen. Launch the app to get started.</p>
+        </div>
+      </div>
+
+      <div class="install-step gold">
+        <div class="step-circle">📝</div>
+        <div class="step-body">
+          <h4>Step 5 — Register with Your Number</h4>
+          <p>Enter your <strong>mobile phone number</strong> to create your free account. Verify the OTP sent to your number and complete your registration in seconds.</p>
+          <span class="step-tip">🔒 Your number is safe and never shared</span>
+        </div>
+      </div>
+
+      <div class="install-step gold">
+        <div class="step-circle">🎁</div>
+        <div class="step-body">
+          <h4>Step 6 — Claim Your 5,000 Bonus</h4>
+          <p>After registering, go to the <strong>Bonus / Rewards section</strong> in the app and tap <strong>"Claim Bonus"</strong>. Your <strong>5,000 points</strong> will be credited to your account immediately.</p>
+          <span class="step-tip">⚡ Bonus credited within seconds of registration</span>
+        </div>
+      </div>
+
+      <div class="install-step gold">
+        <div class="step-circle">💸</div>
+        <div class="step-body">
+          <h4>Step 7 — Withdraw to Your Account</h4>
+          <p>Go to <strong>Wallet → Withdraw</strong> inside the app. Choose your preferred payment method — <strong>Bank Account</strong>, <strong>UPI</strong>, or <strong>Crypto Wallet</strong> — enter your details and submit your withdrawal request.</p>
+          <span class="step-tip">✓ Bank · UPI · Crypto — All supported</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:36px;">
+      <a href="https://drive.google.com/uc?export=download&id=1t4ZHUUUpeBygVZ_fxV7ce6KXIiLpSOtN" class="btn-dl" style="display:inline-flex;">⬇ Download APK & Get Started</a>
+    </div>
+  </div>
+</div>
+
+<!-- PAYMENT METHODS -->
+<div class="payment-section">
+  <div class="payment-inner">
+    <h2>Withdrawal <span style="color:#ffd700;">Payment Methods</span></h2>
+    <p class="sub">We support the following withdrawal methods — fast, secure, and reliable.</p>
+    <div class="payment-grid">
+
+      <div class="payment-card">
+        <div class="pay-icon">🏦</div>
+        <h4>Bank Account</h4>
+        <p>Withdraw directly to your local or international bank account. Enter your account number and IFSC/SWIFT code in the app.</p>
+        <div class="pay-badge">✓ Supported</div>
+      </div>
+
+      <div class="payment-card">
+        <div class="pay-icon">📲</div>
+        <h4>UPI</h4>
+        <p>Instant withdrawal via UPI to any UPI-linked account or app — Paytm, PhonePe, Google Pay, and more.</p>
+        <div class="pay-badge">✓ Supported</div>
+      </div>
+
+      <div class="payment-card">
+        <div class="pay-icon">₿</div>
+        <h4>Crypto Wallet</h4>
+        <p>Withdraw to your crypto wallet address. Supports USDT (TRC20/ERC20), Bitcoin, and other major tokens.</p>
+        <div class="pay-badge">✓ Supported</div>
+      </div>
+
+    </div>
+    <p style="color:rgba(255,255,255,0.4);font-size:12px;margin-top:24px;">Withdrawals processed within 24–48 hours after request submission.</p>
+  </div>
+</div>
+
+<!-- FINAL BONUS CTA -->
+<div class="section" style="padding-bottom:60px;">
+  <div class="reg-cta">
+    <div class="offer-tag">🎁 Exclusive New User Reward</div>
+    <div class="amount-label">Your Bonus Waiting</div>
+    <div class="amount">5,000</div>
+    <div class="amount-label" style="margin-top:4px;">Points — Free</div>
+    <h3>One Click Away — Register Now</h3>
+    <p>Download the APK, register with your number, and claim your <strong>5,000 bonus points</strong> immediately. Withdraw to bank, UPI, or crypto wallet anytime.</p>
+    <a href="https://drive.google.com/uc?export=download&id=1t4ZHUUUpeBygVZ_fxV7ce6KXIiLpSOtN" class="btn-reg">🎁 Register & Claim 5,000 Bonus</a>
+    <a href="https://drive.google.com/uc?export=download&id=1t4ZHUUUpeBygVZ_fxV7ce6KXIiLpSOtN" class="btn-dl2">⬇ Download APK — Free</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-logo">EDGE <span>NEWS</span></div>
+  <p>Official verified global news — Politics, Sports, Technology,<br>Entertainment & Lifestyle. Free to download. Free to use.</p>
+  <a href="https://drive.google.com/uc?export=download&id=1t4ZHUUUpeBygVZ_fxV7ce6KXIiLpSOtN" class="btn-footer">⬇ Download Edge News APK</a>
+  <br>
+  <a href="https://drive.google.com/uc?export=download&id=1t4ZHUUUpeBygVZ_fxV7ce6KXIiLpSOtN" style="color:#ffd700;font-size:14px;font-weight:700;">🎁 Register & Claim Your 5,000 Bonus →</a>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Use</a>
+    <a href="#">Contact</a>
+    <a href="#">About</a>
+  </div>
+  <div class="copy">© 2025 Edge News. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
